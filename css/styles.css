@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #192735;
+}
+
+.nav_menu {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: 0.4s;
+  transition-delay: 0.8s;
+  cursor: pointer;
+}
+
+.nav_menu span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+  transition: transform 0.4s, width 0.4s, height 0.4s, background 0.4s, color 0.4s; /* Consolidate transitions */
+  transition-delay: calc(0.1s * var(--i));
+  font-size: 0rem;
+  color: #fff;
+}
+
+.nav_menu span ion-icon {
+  transition: 0.4s;
+}
+.nav_menu.active {
+  width: 200px;
+  height: 200px;
+  transition-delay: 0s;
+}
+
+.nav_menu.active span {
+  width: 45px;
+  height: 45px;
+  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+  background-color: #333849;
+  font-size: 1.5rem;
+}
+.nav_menu.active span:hover {
+  color: #49ea87;
+  filter: drop-shadow(0 0 2px #49ea49) drop-shadow(0 0 5px #49ea49)
+    drop-shadow(0 0 10px #49ea49);
+}
